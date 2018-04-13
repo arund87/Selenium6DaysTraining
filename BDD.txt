@@ -1,0 +1,57 @@
+When user validated Create Repair Ticket for Product with Call Details Section via Service Type
+
+                |8XX|8883068787|
+
+ 
+
+@When("^user validated Create Repair Ticket for Product with Call Details Section via Service Type$")
+
+                public void user_validated_Create_Repair_Ticket_for_Product_with_Call_Details_Section_via_Service_Type(DataTable productservices) throws Throwable {
+
+                                List<List<String>> data = productservices.raw();
+
+                                for (int i = 0; i < data.size(); i++) {
+
+                                                redesign.CreateRepair_WithCallDetails_ViaServiceType_JANUSReDesign_CreateRepairPage(data.get(i).get(0), data.get(i).get(1) );
+
+                }
+
+                }
+
+               
+
+When user validated Create Repair Ticket for Product without Call Details Section<Type>
+
+                |Type|
+
+                |Dedicated LD|
+
+ 
+
+@When("^user validated Create Repair Ticket for Product without Call Details Section<Type>$")
+
+                public void user_validated_Create_Repair_Ticket_for_Product_without_Call_Details_Section_Type(List<String> product) throws Throwable
+
+                {
+
+                                for (int i = 1; i < product.size(); i++) {
+
+                                                redesign.CreateRepair_WithoutCallDetails_JANUSReDesign_CreateRepairPage(product.get(i));
+
+                }
+
+    }
+
+               
+
+               
+
+int cntcountryddsize=dropdown_contactcountry.getSelectOptions().size();
+
+System.out.println("Size of the cntcountry drop down: "+cntcountryddsize);
+
+int cntcountryrandomnumb=ThreadLocalRandom.current().nextInt(1, cntcountryddsize);
+
+System.out.println("Cntcountry DD random Number: "+cntcountryrandomnumb);
+
+dropdown_contactcountry.selectByIndex(cntcountryrandomnumb);
